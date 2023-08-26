@@ -1,0 +1,20 @@
+Script started on Sat Aug 26 18:10:58 2023
+[1m[7m%[27m[1m[0m                                                                                              [0m[27m[24m[Jtyhome@Tys-MacBook-Pro fso-part12-containers % [K[?2004hexitecho "hello 123"[16Dexit            [12D    exitecho "hello 123""    [12Dgit clone git@github.com:tylersernett/fso-part12-containers.git[K[A[31Cecho "hello"[K[1B[K[A[59C 123"[16Dexit            [12D    [7mdocker run -it ubuntu bash[27m[26D[27md[27mo[27mc[27mk[27me[27mr[27m [27mr[27mu[27mn[27m [27m-[27mi[27mt[27m [27mu[27mb[27mu[27mn[27mt[27mu[27m [27mb[27ma[27ms[27mh[?2004l[1B[?2004h]0;root@7f1feb5d82d0: /root@7f1feb5d82d0:/# ls
+[?2004l[0m[01;36mbin[0m   [01;34mdev[0m  [01;34mhome[0m  [01;34mmedia[0m  [01;34mopt[0m   [01;34mroot[0m  [01;36msbin[0m  [01;34msys[0m  [01;34musr[0m
+[01;34mboot[0m  [01;34metc[0m  [01;36mlib[0m   [01;34mmnt[0m    [01;34mproc[0m  [01;34mrun[0m   [01;34msrv[0m   [30;42mtmp[0m  [01;34mvar[0m
+[?2004h]0;root@7f1feb5d82d0: /root@7f1feb5d82d0:/# cd usr
+[?2004l[?2004h]0;root@7f1feb5d82d0: /usrroot@7f1feb5d82d0:/usr# ls
+[?2004l[0m[01;34mbin[0m  [01;34mgames[0m  [01;34minclude[0m  [01;34mlib[0m  [01;34mlibexec[0m  [01;34mlocal[0m  [01;34msbin[0m  [01;34mshare[0m  [01;34msrc[0m
+[?2004h]0;root@7f1feb5d82d0: /usrroot@7f1feb5d82d0:/usr# cd src
+[?2004l[?2004h]0;root@7f1feb5d82d0: /usr/srcroot@7f1feb5d82d0:/usr/src# mkdir app
+[?2004l[?2004h]0;root@7f1feb5d82d0: /usr/srcroot@7f1feb5d82d0:/usr/src# ls
+[?2004l[0m[01;34mapp[0m
+[?2004h]0;root@7f1feb5d82d0: /usr/srcroot@7f1feb5d82d0:/usr/src# cd app
+[?2004l[?2004h]0;root@7f1feb5d82d0: /usr/src/approot@7f1feb5d82d0:/usr/src/app# touch index.js
+[?2004l[?2004h]0;root@7f1feb5d82d0: /usr/src/approot@7f1feb5d82d0:/usr/src/app# ls
+[?2004lindex.js
+[?2004h]0;root@7f1feb5d82d0: /usr/src/approot@7f1feb5d82d0:/usr/src/app# exit
+[?2004lexit
+[1m[7m%[27m[1m[0m                                                                                              [0m[27m[24m[Jtyhome@Tys-MacBook-Pro fso-part12-containers % [K[?2004heexit[?2004l
+
+Script done on Sat Aug 26 18:12:06 2023
