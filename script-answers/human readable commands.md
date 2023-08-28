@@ -1,5 +1,5 @@
 # human readable commands
-
+hours: 5
 ## 12_3
 ```bash
 docker start -i festive_johnson
@@ -25,3 +25,14 @@ apt install -y nodejs
 node /usr/src/app/index.js
 exit
 ```
+
+## 12_8
+docker container ls   (get the id)
+docker exec -it 04e414f785ba bash  (use -it flags: interactive, terminal emulation)
+mongosh -u root -p example  (flags: pass in user and password values)
+show dbs            (show all dbs)
+use the_database    (switch active db to "the_database")
+show collections    (show collections of the active db)
+db.todos.find({})    (show all todos)
+db.todos.insertOne( { text: "Increase the number of tools in my toolbelt" , done: false } )
+db.todos.find({})   (check that above was added)
