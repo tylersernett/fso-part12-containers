@@ -1,5 +1,5 @@
 # human readable commands
-hours: 5
+hours: 5 + 2.5 = 7.5
 ## 12_3
 ```bash
 docker start -i festive_johnson
@@ -36,3 +36,12 @@ show collections    (show collections of the active db)
 db.todos.find({})    (show all todos)
 db.todos.insertOne( { text: "Increase the number of tools in my toolbelt" , done: false } )
 db.todos.find({})   (check that above was added)
+
+## 12_11
+docker exec -it a78eb0dfe060 bash
+redis-cli          (open redis CLI)
+KEYS *              (get all keys)
+GET added_todos         (get value of specific key)
+SET added_todos 9001   (set value)
+GET added_todos        (check that it worked)
+DEL added_todos
