@@ -11,5 +11,8 @@ services:
       #These variables, used in conjunction, create a new user and set that user's password. This user is created in the admin authentication database and given the role of root, which is a "superuser" role.
       MONGO_INITDB_DATABASE: the_database
       #tell MongoDB to create a database with that name. 
-    volumes:       
-      - ./mongo/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
+    volumes:
+    #bind mount the init file
+      - ./mongo/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js 
+      #bind mount the db itself so local copy matches
+      - ./mongo_data:/data/db
