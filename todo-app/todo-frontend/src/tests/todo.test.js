@@ -9,11 +9,11 @@ describe('Todo Component', () => {
     done: false,
   };
   
-  const mockOnClickDelete = jest.fn();
-  const mockOnClickComplete = jest.fn();
+  const mockDeleteTodo = jest.fn();
+  const mockCompleteTodo = jest.fn();
 
   it('renders todo correctly when not done', () => {
-    render(<Todo todo={mockTodo} onClickDelete={mockOnClickDelete} onClickComplete={mockOnClickComplete} />);
+    render(<Todo todo={mockTodo} deleteTodo={mockDeleteTodo} completeTodo={mockCompleteTodo} />);
 
     expect(screen.getByText('Test Todo')).toBeInTheDocument();
     expect(screen.getByText('This todo is not done')).toBeInTheDocument();
@@ -22,7 +22,7 @@ describe('Todo Component', () => {
   });
 
   it('renders todo correctly when done', () => {
-    render(<Todo todo={{ ...mockTodo, done: true }} onClickDelete={mockOnClickDelete} onClickComplete={mockOnClickComplete} />);
+    render(<Todo todo={{ ...mockTodo, done: true }} deleteTodo={mockDeleteTodo} completeTodo={mockCompleteTodo} />);
 
     expect(screen.getByText('Test Todo')).toBeInTheDocument();
     expect(screen.getByText('This todo is done')).toBeInTheDocument();
@@ -30,21 +30,21 @@ describe('Todo Component', () => {
     expect(screen.getByText('Delete')).toBeInTheDocument();
   });
 
-  it('calls onClickDelete when delete button is clicked', () => {
-    render(<Todo todo={mockTodo} onClickDelete={mockOnClickDelete} onClickComplete={mockOnClickComplete} />);
+  it('calls deleteTodo when delete button is clicked', () => {
+    render(<Todo todo={mockTodo} deleteTodo={mockDeleteTodo} completeTodo={mockCompleteTodo} />);
 
     const deleteButton = screen.getByText('Delete');
     fireEvent.click(deleteButton);
 
-    expect(mockOnClickDelete).toHaveBeenCalledWith(mockTodo);
+    expect(mockDeleteTodo).toHaveBeenCalledWith(mockTodo);
   });
 
-  it('calls onClickComplete when complete button is clicked', () => {
-    render(<Todo todo={mockTodo} onClickDelete={mockOnClickDelete} onClickComplete={mockOnClickComplete} />);
+  it('calls completeTodo when complete button is clicked', () => {
+    render(<Todo todo={mockTodo} deleteTodo={mockDeleteTodo} completeTodo={mockCompleteTodo} />);
 
     const completeButton = screen.getByText('Set as done');
     fireEvent.click(completeButton);
 
-    expect(mockOnClickComplete).toHaveBeenCalledWith(mockTodo);
+    expect(mockCompleteTodo).toHaveBeenCalledWith(mockTodo);
   });
 });
