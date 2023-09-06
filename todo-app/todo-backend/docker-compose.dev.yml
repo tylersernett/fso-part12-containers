@@ -23,3 +23,15 @@ services:
     command: ['redis-server', '--appendonly', 'yes'] # Overwrite the CMD
     volumes: # Declare the volume for persiting data
       - ./redis_data:/data
+  server:
+    image: todo-backend-dev
+    ports:
+      - 2999:2999
+    volumes:
+      - ./:/usr/src/app
+    depends_on:
+      - mongo
+      - redis
+    environment:
+      - REDIS_URL=redis://redis:6379
+      - MONGO_URL=mongodb://the_username:the_password@mongo:27017/the_database # @localhost:3456 vs @mongo:27017
