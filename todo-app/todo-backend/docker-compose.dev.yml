@@ -4,7 +4,7 @@ services:
   mongo:
     image: mongo
     ports:
-      - 3456:27017
+      - 3456:27017 # 3456 exposed on host machine, but container is listening to 27017
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
@@ -12,7 +12,7 @@ services:
       MONGO_INITDB_DATABASE: the_database
       #tell MongoDB to create a database with that name. 
     volumes:
-    #bind mount the init file
+      #bind mount the init file
       - ./mongo/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js 
       #bind mount the db itself so local copy matches
       - ./mongo_data:/data/db
@@ -26,7 +26,7 @@ services:
   server:
     image: todo-backend-dev
     ports:
-      - 2999:2999
+      - 3000:3000
     volumes:
       - ./:/usr/src/app
     depends_on:
@@ -34,4 +34,4 @@ services:
       - redis
     environment:
       - REDIS_URL=redis://redis:6379
-      - MONGO_URL=mongodb://the_username:the_password@mongo:27017/the_database # @localhost:3456 vs @mongo:27017
+      - MONGO_URL=mongodb://the_username:the_password@mongo:27017/the_database # @localhost:3456 vs @mongo:27017 .... server service connects to mongo service @ container port 27017
